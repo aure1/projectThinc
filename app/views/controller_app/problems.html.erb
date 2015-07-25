@@ -1,0 +1,10 @@
+<h2>Problems</h2>
+
+
+<%= form_tag({controller: 'controller_app', action: 'validate'}, method: "post") do %>
+  <% @problems.each_with_index do |var, index| %>	
+  	  <p> <%= (index+1).to_s+'.- ' %>   <%= var.description%>
+	  <%= text_field_tag('index[]') %></p>
+  <% end %>
+  <%= submit_tag("verify") %>
+<% end %>
